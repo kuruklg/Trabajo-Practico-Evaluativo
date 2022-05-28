@@ -11,8 +11,8 @@
 			<div th:replace="/layouts/header::header"></div>			
 			<h1 align="center">Alta de Usuario</h1>		
 		</header>
-		<div class="w-100 container d-flex justify-content-center">
-			<form class="w-50 rounded-2 card p-5" th:action="@{/usuario/guardar}" method="POST" th:object="${usuario}">
+		<div class="container col-4">
+			<form th:action="@{/usuario/guardar}" method="POST" th:object="${usuario}">
 				<div class="mb-3">
 					<label  class="form-label">DNI</label> 
 					<input  th:field="*{dni}" type="number" class="form-control" >
@@ -29,9 +29,9 @@
 					<label class="form-label">Fecha de Nacimiento</label> 
 					<input th:field="*{fechaNacimiento}" type="text" class="form-control" >
 				</div>
-				<div class="d-grid gap-2 d-md-flex justify-content-md-between">
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 					<button class="btn btn-primary me-md-2" type="submit">Guardar</button>
-					 <a th:href="@{/home}" class="btn btn-danger">Cancelar</a>	  				
+					 <a th:href="@{/home}" class="btn btn-secondary">Cancelar</a>	  				
 				</div>
 			</form><br><br>
 		</div>
