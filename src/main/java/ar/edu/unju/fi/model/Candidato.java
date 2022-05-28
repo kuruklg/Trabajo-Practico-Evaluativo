@@ -6,6 +6,12 @@ public class Candidato {
 	private String genero;
 	private String descripcion;
 	private int numVotos;
+	
+	
+	public Candidato() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Candidato(int codigo, String nombre, String genero, String descripcion) {
 		super();
 		this.codigo = codigo;
