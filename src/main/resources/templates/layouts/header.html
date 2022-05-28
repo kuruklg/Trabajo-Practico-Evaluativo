@@ -33,14 +33,14 @@
 								votaron</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="#">Resultados</a>
+							<a class="nav-link " th:href="@{/candidato/listaCandidatos}">Resultados</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false"> Nuevo </a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" th:href="@{/candidato/listaDocentes}">Candidato</a></li>
-								<li><a class="dropdown-item" th:href="@{/usuario/listaUsuarios}">Usuario</a></li>
+								<li><a class="dropdown-item" th:href="@{/candidato/nuevo}">Candidato</a></li>
+								<li><a class="dropdown-item" th:href="@{/usuario/nuevo}">Usuario</a></li>
 							</ul>
 						</li>
 					</ul>
