@@ -4,15 +4,14 @@
 		<meta charset="utf-8">
 		<title>Inicio</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
-		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 	</head>
 	<body>
-		<header th:replace="/layouts/header :: header"></header>
-		
-		<section>
-			<h2>Votá ahora a tu artista favorito!</h2>
-		</section>
-		<footer th:insert="/layouts/footer::footer"></footer>
+		<header class="sticky-top shadow" th:replace="/layouts/header :: header"></header>
+		<section class="w-100 bg-banner">
+			
+		</section >
+		<footer class="w-100" th:insert="/layouts/footer::footer"></footer>
 		<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
 		<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
 		<script type="text/javascript" th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
