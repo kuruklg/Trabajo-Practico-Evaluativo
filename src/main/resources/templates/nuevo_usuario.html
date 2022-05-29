@@ -16,6 +16,7 @@
 				<div class="mb-3">
 					<label  class="form-label">DNI</label> 
 					<input  th:field="*{dni}" type="number" class="form-control" >
+					<div class="text-danger" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></div>
 				</div>
 				<div class="mb-3">
 					<label class="form-label">Nombre</label> 
@@ -27,7 +28,7 @@
 				</div>
 				<div class="mb-3">
 					<label class="form-label">Fecha de Nacimiento</label> 
-					<input th:field="*{fechaNacimiento}" type="date" class="form-control" >
+					<input th:field="*{fechaNacimiento}" type="date" id="fecha" th:value="*{fechaNacimiento}" class="form-control" >
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-between">
 					<button class="btn btn-primary me-md-2" type="submit">Guardar</button>

@@ -26,7 +26,7 @@ public class CandidatoController {
 	
 	@PostMapping("/guardar")
 	public ModelAndView getListaCandidatosPage(@ModelAttribute("candidato")Candidato candidato) {
-		ModelAndView mav = new ModelAndView("lista_candidatos");
+		ModelAndView mav = new ModelAndView("lista_candidato");
 		ListaCandidato listaCandidatos = new ListaCandidato();
 		if(listaCandidatos.getListaCandidato().add(candidato)) {
 			LOGGER.info("Se registra el candidato "+candidato.getNombre());
