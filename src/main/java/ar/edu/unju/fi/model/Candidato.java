@@ -1,13 +1,20 @@
 package ar.edu.unju.fi.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import org.springframework.stereotype.Component;
+@Component
 public class Candidato {
 	private int codigo;
+	@Size(min=3, max=100, message="El nombre debe tener entre 3 a 100 caracteres")
 	private String nombre;
 	private String genero;
+	@Size(max=150, message="La descripción no debe superar los 150 caracteres")
 	private String descripcion;
 	private int numVotos;
 	
-	
+
 	public Candidato() {
 		super();
 		// TODO Auto-generated constructor stub
