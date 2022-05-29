@@ -1,0 +1,25 @@
+.bg-banner{
+	background-image: url('/images/banner-home-votacion.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width:100vw;
+}
+
+footer{
+    background-color: #4E4E4E;
+}
+footer div h3{
+    font-size: .7rem;
+    color: #fff;
+}
+footer div ul a{
+    font-size: .7rem;
+    color: #fff;
+    list-style: none;
+    ;
+}
+.span-footer{
+    color: #fff;
+    font-size: .6rem;
+}
