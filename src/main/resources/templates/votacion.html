@@ -11,58 +11,22 @@
 <body>
 	<header th:replace="/layouts/header :: header"></header>
 
-	<h1 class="text-center">Votacion</h1 >
+	<h1 class="text-center">Votación</h1 >
 	<section class="w-100 p-5 d-flex flex-column justify-content-center container">
         <h1 class="py-5">Elige al artista que quieres votar</h1>
         <div class="row grid rounded-2">
-            <div class="col-3 d-flex justify-content-center">
+            <div th:each="d: ${candidatos}" class="col-md-4 d-flex justify-content-center">
                 <div class="card d-flex justify-content-center">
                     <div class="text-center"><img src="../img/person-img.png" class="card-img-top" alt="...">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-center">Name Lastnaem</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title text-center" th:text="${d.nombre}"></h5>
+                        <p class="card-text" th:text="${d.descripcion}"></p>
                         <div class="text-center"><button href="#" class="btn btn-primary">Vote</button></div>
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <div class="card">
-                    <div class="d-flex justify-content-center"><img src="person-img.png" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Name Lastnaem</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <div class="text-center"><button href="#" class="btn btn-primary">Vote</button></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card">
-                    <div class="d-flex justify-content-center"><img src="person-img.png" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Name Lastnaem</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <div class="text-center"><button href="#" class="btn btn-primary">Vote</button></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card">
-                    <div class="d-flex justify-content-center"><img src="person-img.png" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Name Lastnaem</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <div class="text-center"><button href="#" class="btn btn-primary">Vote</button></div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
 	<footer th:insert="/layouts/footer::footer"></footer>
