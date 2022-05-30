@@ -39,8 +39,8 @@
 					<td th:text="${d.numVotos}"></td>
 					<td></td>
 					<td>
-						<a href="#" class="btn btn-warning">Editar</a>
-						<a href="#" class="btn btn-danger">Eliminar</a>
+						<a th:href="@{/candidato/editar/}+${d.codigo}" class="btn btn-warning">Editar</a>
+						<a th:href="@{/candidato/eliminar/}+${d.codigo}" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>
 			</table>

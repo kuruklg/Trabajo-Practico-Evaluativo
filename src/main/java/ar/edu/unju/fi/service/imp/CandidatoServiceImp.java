@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.model.Candidato;
+import ar.edu.unju.fi.model.Usuario;
 import ar.edu.unju.fi.service.ICandidatoService;
 import ar.edu.unju.fi.util.ListaCandidato;
 
@@ -40,8 +41,18 @@ public class CandidatoServiceImp implements ICandidatoService {
 	}
 
 	@Override
-	public void eliminarCandidato(Candidato candidato) {
+	public void eliminarCandidato(int codigo) {
 		// TODO Auto-generated method stub
+		listaCandidato.getListaCandidato();
+		int indice=-1;
+		for(Candidato c : listaCandidato.getListaCandidato()) {
+			if(c.getCodigo() == codigo) {
+				indice = listaCandidato.getListaCandidato().indexOf(c);
+			}
+		}
+		if(indice>=0) {
+			listaCandidato.getListaCandidato().remove(indice);
+		}
 		
 	}
 

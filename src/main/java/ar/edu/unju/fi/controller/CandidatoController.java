@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.fi.model.Candidato;
+import ar.edu.unju.fi.model.Usuario;
 import ar.edu.unju.fi.service.ICandidatoService;
 import ar.edu.unju.fi.util.ListaCandidato;
 
@@ -70,5 +71,29 @@ public class CandidatoController {
 		
 	}
 	
-
+	@PostMapping("/modificar")
+	public ModelAndView editarDatosCandidato(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult ) {
+		if(bindingResult.hasErrors()) {
+			LOGGER.info("ocurrió un error "+candidato);
+			ModelAndView mav = new ModelAndView("edicion_candidato");
+			mav.addObject("candidato", candidato);
+			return mav;
+		}
+		
+		ModelAndView mav = new ModelAndView("redirect:/candidato/listaCandidatos");
+		candidatoService.modificarCandidato(candidato);
+		return mav;
+		
+	}
+	
+	@GetMapping("/eliminar/{codigo}")
+	public ModelAndView eliminarCandidato(@PathVariable("codigo")int codigo) {
+		
+		ModelAndView mav = new ModelAndView("redirect:/candidato/listaCandidatos");
+		candidatoService.eliminarCandidato(codigo);
+		
+		return mav;
+		
+	}
+	
 }
