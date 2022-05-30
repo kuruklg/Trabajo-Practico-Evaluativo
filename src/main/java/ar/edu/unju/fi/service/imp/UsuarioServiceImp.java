@@ -83,6 +83,21 @@ public class UsuarioServiceImp implements IUsuarioService {
 		}
 		
 		return encontrado;
+	}
+
+	@Override
+	public boolean puedeVotar(int dni) {
+		listaUsuario.getListaUsuario();
+		boolean n = false;
+		for(Usuario user : listaUsuario.getListaUsuario()) {
+			if(user.getDni() == dni) {
+				if(user.getCantVotaciones()<3) {
+					n = true;
+				}
+			}
+		}
+		
+		return n;
 	} 
 
 }

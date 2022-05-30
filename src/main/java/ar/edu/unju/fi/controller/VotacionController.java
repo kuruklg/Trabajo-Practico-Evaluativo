@@ -48,7 +48,7 @@ public class VotacionController {
 	@PostMapping("/votar")
 	public ModelAndView getAccesoVotarPage(@ModelAttribute("usuario") Usuario usuario) {
 		ModelAndView mav;
-		if(usuarioService.validarUsuario(usuario.getDni())) {
+		if(usuarioService.validarUsuario(usuario.getDni()) && usuarioService.puedeVotar(usuario.getDni())) {
 			mav = new ModelAndView("votar");
 			Usuario u = usuarioService.buscarUsuario(usuario.getDni());
 			mav.addObject(u);
@@ -56,7 +56,9 @@ public class VotacionController {
 			mav.addObject("candidatos", candidatoService.getListaCandidatos().getListaCandidato());
 		}else {
 			LOGGER.info("El usuario no está registrado ");
-			 mav = new ModelAndView("redirect:/usuario/listaUsuarios");
+			
+			mav = new ModelAndView("redirect:/usuario/nuevo");
+			mav.addObject("usuario", usuarioService.getUsuario());
 		}
 		
 		return mav;
@@ -71,6 +73,7 @@ public class VotacionController {
 		Candidato candidato = candidatoService.buscarCandidato(codigo);
 		//usuario.getListaVotaciones().add(candidato);
 		usuario.setCantVotaciones();
+		System.out.println(usuario.getCantVotaciones());
 		
 		
 		//candidato.getListaVotaciones().add(usuario);
