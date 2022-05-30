@@ -10,4 +10,5 @@ public interface IUsuarioService {
 	public void eliminarUsuario(int dni);
 	public ListaUsuario getListaUsuarios();
 	public Usuario buscarUsuario(int dni);
+	public boolean validarUsuario(int dni);
 }

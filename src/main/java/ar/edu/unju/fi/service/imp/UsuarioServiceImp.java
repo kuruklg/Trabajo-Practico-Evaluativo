@@ -69,6 +69,20 @@ public class UsuarioServiceImp implements IUsuarioService {
 		// TODO Auto-generated method stub
 		Optional<Usuario> usuario = listaUsuario.getListaUsuario().stream().filter(a -> a.getDni() == dni).findFirst();
 		return usuario.get();
+	}
+
+	@Override
+	public boolean validarUsuario(int dni) {
+		// TODO Auto-generated method stub
+		listaUsuario.getListaUsuario();
+		boolean encontrado = false;
+		for(Usuario user : listaUsuario.getListaUsuario()) {
+			if(user.getDni() == dni) {
+				encontrado = true;
+			}
+		}
+		
+		return encontrado;
 	} 
 
 }
