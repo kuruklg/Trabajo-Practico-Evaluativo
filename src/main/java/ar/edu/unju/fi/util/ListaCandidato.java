@@ -18,12 +18,14 @@ public class ListaCandidato {
 		Candidato candidato4=new Candidato(444, "Artista4","Rap","Descripcion breve del artista 4 ...");
 		Candidato candidato5=new Candidato(555, "Artista5","Rap","Descripcion breve del artista 5 ...");
 		Candidato candidato6=new Candidato(666, "Artista6","Pop","Descripcion breve del artista 6 ...");
+		Candidato candidato7=new Candidato(000, "Ninguno","---","---------------------");
 		listaCandidato.add(candidato1);
 		listaCandidato.add(candidato2);
 		listaCandidato.add(candidato3);
 		listaCandidato.add(candidato4);
 		listaCandidato.add(candidato5);
 		listaCandidato.add(candidato6);
+		listaCandidato.add(candidato7);
 	}
 	
 	public ArrayList<Candidato> getListaCandidato() {

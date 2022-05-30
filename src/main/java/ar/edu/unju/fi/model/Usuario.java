@@ -2,6 +2,7 @@ package ar.edu.unju.fi.model;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
@@ -23,6 +24,7 @@ public class Usuario {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaNacimiento;
 	private int cantVotaciones;
+	private ArrayList<Candidato> listaVotaciones;
 	
 	
 	public Usuario() {
@@ -37,6 +39,7 @@ public class Usuario {
 		this.email = email;
 		this.fechaNacimiento = fechaNacimiento;
 		this.cantVotaciones = 0;
+		this.listaVotaciones = new ArrayList<Candidato>();
 	}
 	
 	public int getDni() {
@@ -75,13 +78,25 @@ public class Usuario {
 		return cantVotaciones;
 	}
 
-	public void setCantVotaciones(int cantVotaciones) {
-		this.cantVotaciones = cantVotaciones;
+	public void setCantVotaciones() {
+		this.cantVotaciones = cantVotaciones +1;
+	}
+	
+	public int getCantVotosRestantes() {
+		return (3-this.cantVotaciones);
 	}
 
 	public int edad() {
 		Period period = Period.between(LocalDate.now(), fechaNacimiento);
 		return period.getYears();
+	}
+
+	public ArrayList<Candidato> getListaVotaciones() {
+		return listaVotaciones;
+	}
+
+	public void setListaVotaciones(ArrayList<Candidato> listaVotaciones) {
+		this.listaVotaciones = listaVotaciones;
 	}
 
 	@Override
