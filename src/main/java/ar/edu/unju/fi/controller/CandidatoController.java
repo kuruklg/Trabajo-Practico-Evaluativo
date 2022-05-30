@@ -46,7 +46,7 @@ public class CandidatoController {
 		}
 		ModelAndView mav = new ModelAndView("redirect:/candidato/listaCandidatos");
 		
-		if(candidatoService.guardarCandiato(candidato)) {
+		if(candidatoService.guardarCandidato(candidato)) {
 			LOGGER.info("Se registra el candidato "+candidato.getNombre());
 		}
 		

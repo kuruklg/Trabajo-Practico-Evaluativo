@@ -23,7 +23,7 @@ public class CandidatoServiceImp implements ICandidatoService {
 	}
 
 	@Override
-	public boolean guardarCandiato(Candidato candidato) {
+	public boolean guardarCandidato(Candidato candidato) {
 		// TODO Auto-generated method stub
 		return listaCandidato.getListaCandidato().add(candidato);
 	}

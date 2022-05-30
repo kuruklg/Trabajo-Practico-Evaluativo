@@ -8,7 +8,7 @@ import ar.edu.unju.fi.util.ListaCandidato;
 @Service("CandidatoServiceImpList")
 public interface ICandidatoService {
 	public Candidato getCandidato();
-	public boolean guardarCandiato(Candidato candidato);
+	public boolean guardarCandidato(Candidato candidato);
 	public void modificarCandidato(Candidato candidato);
 	public void eliminarCandidato(int codigo);
 	public ListaCandidato getListaCandidatos();
