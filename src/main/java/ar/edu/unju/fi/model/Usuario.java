@@ -24,7 +24,7 @@ public class Usuario {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaNacimiento;
 	private int cantVotaciones;
-	private ArrayList<Candidato> listaVotaciones;
+	//private ArrayList<Candidato> listaVotaciones;
 	
 	
 	public Usuario() {
@@ -39,7 +39,7 @@ public class Usuario {
 		this.email = email;
 		this.fechaNacimiento = fechaNacimiento;
 		this.cantVotaciones = 0;
-		this.listaVotaciones = new ArrayList<Candidato>();
+		//this.listaVotaciones = new ArrayList<Candidato>();
 	}
 	
 	public int getDni() {
@@ -91,13 +91,13 @@ public class Usuario {
 		return period.getYears();
 	}
 
-	public ArrayList<Candidato> getListaVotaciones() {
+	/*public ArrayList<Candidato> getListaVotaciones() {
 		return listaVotaciones;
 	}
 
 	public void setListaVotaciones(ArrayList<Candidato> listaVotaciones) {
 		this.listaVotaciones = listaVotaciones;
-	}
+	}*/
 
 	@Override
 	public String toString() {

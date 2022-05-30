@@ -15,7 +15,7 @@ public class Candidato {
 	@Size(max=150, message="La descripción no debe superar los 150 caracteres")
 	private String descripcion;
 	private int numVotos;
-	private ArrayList<Usuario> listaVotaciones;
+	//private ArrayList<Usuario> listaVotaciones;
 	
 
 	public Candidato() {
@@ -29,7 +29,7 @@ public class Candidato {
 		this.genero = genero;
 		this.descripcion = descripcion;
 		this.numVotos = 0;
-		this.listaVotaciones = new ArrayList<Usuario>();
+		//this.listaVotaciones = new ArrayList<Usuario>();
 	}
 	public int getCodigo() {
 		return codigo;
@@ -61,12 +61,12 @@ public class Candidato {
 	public void setNumVotos() {
 		this.numVotos = numVotos+1;
 	}
-	public ArrayList<Usuario> getListaVotaciones() {
+	/*public ArrayList<Usuario> getListaVotaciones() {
 		return listaVotaciones;
 	}
 	public void setListaVotaciones(ArrayList<Usuario> listaVotaciones) {
 		this.listaVotaciones = listaVotaciones;
-	}
+	}*/
 	
 	
 	

@@ -40,7 +40,7 @@ public class VotacionController {
 		ModelAndView mav = new ModelAndView("votacion");
 		ListaCandidato listaC = new ListaCandidato();
 		Usuario u = usuarioService.getUsuario();
-		mav.addObject("candidatos", listaC.getListaCandidato());
+		mav.addObject("candidatos", candidatoService.getListaCandidatos().getListaCandidato());
 		mav.addObject("usuario", u);
 		return mav;
 	}
@@ -53,7 +53,7 @@ public class VotacionController {
 			Usuario u = usuarioService.buscarUsuario(usuario.getDni());
 			mav.addObject(u);
 			ListaCandidato listaC = new ListaCandidato();
-			mav.addObject("candidatos", listaC.getListaCandidato());
+			mav.addObject("candidatos", candidatoService.getListaCandidatos().getListaCandidato());
 		}else {
 			LOGGER.info("El usuario no está registrado ");
 			 mav = new ModelAndView("redirect:/usuario/listaUsuarios");
@@ -69,11 +69,11 @@ public class VotacionController {
 		
 		mav.addObject("usuario",usuario);
 		Candidato candidato = candidatoService.buscarCandidato(codigo);
-		usuario.getListaVotaciones().add(candidato);
+		//usuario.getListaVotaciones().add(candidato);
 		usuario.setCantVotaciones();
 		
 		
-		candidato.getListaVotaciones().add(usuario);
+		//candidato.getListaVotaciones().add(usuario);
 		candidato.setNumVotos();
 		
 		mav.addObject("usuario",usuario);
