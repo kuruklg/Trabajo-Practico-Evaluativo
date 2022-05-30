@@ -11,4 +11,5 @@ public interface IUsuarioService {
 	public ListaUsuario getListaUsuarios();
 	public Usuario buscarUsuario(int dni);
 	public boolean validarUsuario(int dni);
+	public boolean puedeVotar(int dni);
 }
