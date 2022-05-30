@@ -8,13 +8,14 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 </head>
 
-<body>
+<body class="bg-1">
 	<header>
 		<div th:replace="/layouts/header::header"></div>
-		<h1 align="center">Alta de Candidato</h1>
+		<h1 class="my-5" align="center">Alta de Candidato</h1>
 	</header>
 	<div class="w-100 container d-flex justify-content-center">
-		<form class="col-lg-6 col-md-8 col-sm-10 col-12 rounded-2 card p-5" th:action="@{/candidato/guardar}" method="POST" th:object="${candidato}">
+		<form class="col-lg-6 col-md-8 col-sm-10 col-12 rounded-2 card p-5" th:action="@{/candidato/guardar}"
+			method="POST" th:object="${candidato}">
 			<div class="mb-3">
 				<label class="form-label">Código</label>
 				<input th:field="*{codigo}" type="number" class="form-control">
@@ -29,7 +30,7 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label">Breve descripción</label>
-				<input th:field="*{descripcion}" type="text" style="HEIGHT: 98px" class="form-control">
+				<input th:field="*{descripcion}" type="text" style="height: 98px" class="form-control">
 			</div>
 			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 				<button class="btn btn-primary me-md-2" type="submit">Guardar</button>

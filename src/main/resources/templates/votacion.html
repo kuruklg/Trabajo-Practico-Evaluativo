@@ -8,18 +8,17 @@
 	<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 </head>
 
-<body>
+<body class="bg-1">
 	<header th:replace="/layouts/header :: header"></header>
 
-	<h1 class="text-center">Votación</h1>
+	<h1 class="text-center py-5">Votación</h1>
 	<section class="w-100 p-5 d-flex flex-column justify-content-center container">
 		<h1 class="py-5">Elige al artista que quieres votar</h1>
 		
-		
-		<form class="w-50 rounded-2 card p-5" th:action="@{/votacion/votar}" method="POST" th:object="${usuario}">
+		<form class="col-6 rounded-2 card p-5" th:action="@{/votacion/votar}" method="POST" th:object="${usuario}">
 			<div class="mb-3">
 					<label  class="form-label">Ingresa tu dni para votar</label> 
-					<input  th:field="*{dni}" type="number" class="form-control" >
+					<input  th:field="*{dni}" type="number" class="form-control">
 					<div class="text-danger" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></div>
 			</div>
 			<div class="d-grid gap-2 d-md-flex justify-content-md-between">
@@ -28,12 +27,7 @@
 			</div>
 			
 		</form>
-		
-		
-		
-		
-	
-		
+
 	</section>
 	<footer th:insert="/layouts/footer::footer"></footer>
 	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>

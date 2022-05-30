@@ -4,15 +4,15 @@
 		<meta charset="UTF-8">
 		<title>Registro de Usuario</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}">
-		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
 	</head>
-	<body>
+	<body class="bg-1">
 		<header>
 			<div th:replace="/layouts/header::header"></div>			
-			<h1 align="center">Alta de Usuario</h1>		
+			<h1 class="my-5" align="center">Alta de Usuario</h1>		
 		</header>
 		<div class="w-100 container d-flex justify-content-center">
-			<form class="w-50 rounded-2 card p-5" th:action="@{/usuario/guardar}" method="POST" th:object="${usuario}">
+			<form class="col-lg-6 col-md-8 col-sm-10 col-12 rounded-2 card p-5" th:action="@{/usuario/guardar}" method="POST" th:object="${usuario}">
 				<div class="mb-3">
 					<label  class="form-label">DNI</label> 
 					<input  th:field="*{dni}" type="number" class="form-control" >

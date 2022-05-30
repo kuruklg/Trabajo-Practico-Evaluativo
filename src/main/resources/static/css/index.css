@@ -6,6 +6,12 @@
 	width:100vw;
 }
 
+.bg-1{
+	background-image: url('/images/background.jpg');
+	background-repeat: repeat;
+	background-size: cover;
+}
+
 footer{
     background-color: #4E4E4E;
 }
