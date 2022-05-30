@@ -66,7 +66,6 @@ public class CandidatoServiceImp implements ICandidatoService {
 	public Candidato buscarCandidato(int codigo) {
 		// TODO Auto-generated method stub
 		Optional<Candidato> candidato = listaCandidato.getListaCandidato().stream().filter(a -> a.getCodigo() == codigo).findFirst();
-		System.out.println(candidato.get());
 		return candidato.get();
 	}
 
