@@ -10,7 +10,7 @@ public interface ICandidatoService {
 	public Candidato getCandidato();
 	public boolean guardarCandiato(Candidato candidato);
 	public void modificarCandidato(Candidato candidato);
-	public void eliminarCandidato(Candidato candidato);
+	public void eliminarCandidato(int codigo);
 	public ListaCandidato getListaCandidatos();
 	public Candidato buscarCandidato(int codigo);
 }

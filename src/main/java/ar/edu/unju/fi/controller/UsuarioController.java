@@ -62,11 +62,37 @@ public class UsuarioController {
 		return mav;
 	}
 	
+	
 	@GetMapping("/editar/{dni}")
 	public ModelAndView getEditarUsuarioPage(@PathVariable(value="dni") int dni) {
 		ModelAndView mav = new ModelAndView("edicion_usuario");
 		Usuario usuario = usuarioService.buscarUsuario(dni);
 		mav.addObject("usuario",usuario);
+		return mav;
+		
+	}
+	
+	@PostMapping("/modificar")
+	public ModelAndView editarDatosUsuario(@Validated @ModelAttribute("usuario") Usuario usuario, BindingResult bindingResult ) {
+		if(bindingResult.hasErrors()) {
+			LOGGER.info("ocurrió un error "+usuario);
+			ModelAndView mav = new ModelAndView("edicion_usuario");
+			mav.addObject("usuario", usuario);
+			return mav;
+		}
+		
+		ModelAndView mav = new ModelAndView("redirect:/usuario/listaUsuarios");
+		usuarioService.modificarUsuario(usuario);
+		return mav;
+		
+	}
+	
+	@GetMapping("/eliminar/{dni}")
+	public ModelAndView eliminarUsuario(@PathVariable("dni")int dni) {
+		
+		ModelAndView mav = new ModelAndView("redirect:/usuario/listaUsuarios");
+		usuarioService.eliminarUsuario(dni);
+		
 		return mav;
 		
 	}

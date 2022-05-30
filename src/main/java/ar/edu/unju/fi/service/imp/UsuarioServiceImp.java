@@ -45,6 +45,16 @@ public class UsuarioServiceImp implements IUsuarioService {
 	@Override
 	public void eliminarUsuario(int dni) {
 		// TODO Auto-generated method stub
+		listaUsuario.getListaUsuario();
+		int indice=-1;
+		for(Usuario user : listaUsuario.getListaUsuario()) {
+			if(user.getDni() == dni) {
+				indice = listaUsuario.getListaUsuario().indexOf(user);
+			}
+		}
+		if(indice>=0) {
+			listaUsuario.getListaUsuario().remove(indice);
+		}
 		
 	}
 
